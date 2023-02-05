@@ -1,15 +1,19 @@
 import { configureStore } from "@reduxjs/toolkit";
-
+import { createWrapper } from "next-redux-wrapper";
 import productReducer from "../reducers/productSlice";
+import categoryReducer from "../reducers/categorySlice";
 
 
 
 
-const store = configureStore({
+ export const store = configureStore({
     reducer:{
         AllProducts:productReducer,
+        Category:categoryReducer,
 
     }
 })
 
-export default store;
+const makeStore =()=> store;
+
+export const wrapper = createWrapper(makeStore);
