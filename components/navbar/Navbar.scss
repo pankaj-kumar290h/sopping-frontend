@@ -1,0 +1,29 @@
+
+#navbar{
+    height: 4rem;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+    text-align: center;
+    align-items: center;
+}
+
+#catogry-links ul{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+li{
+    margin-left: 1rem;
+    cursor: pointer;
+    
+}
+
+ul{
+    list-style: none;
+    color: white;
+
+    
+}
