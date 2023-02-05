@@ -1,0 +1,57 @@
+.card{
+    width: 250px;
+
+    padding: .7rem;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    &:hover img{
+        transform: scale(1.1);
+    }
+    &_body{
+        max-width:250px;
+        height: 350px;
+        
+        .image{
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            
+
+
+            img{
+                width: 90%;
+                height: 200px;
+                transition: all 0.7s;
+            }
+        }
+        
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        
+        .title{
+            align-items: center;
+            text-align: center;
+        }
+        .rating{
+
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+    &_body:hover .title{
+        color: skyblue;
+    }
+}
+
+.all_Product_display{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
