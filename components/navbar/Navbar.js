@@ -1,43 +1,44 @@
-import React from 'react'
-import { useEffect,useState } from 'react'
+import React from "react";
+import { BsCart4 } from "react-icons/bs";
+import { RiShoppingBag3Fill } from "react-icons/ri";
+
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 const Navbar = () => {
+  const router = useRouter();
+  const category = useSelector((e) => e.Category);
+  const TotalItemsInCart = useSelector(e=>e.Cart); 
 
-    const [category,setCategory]= useState(null);
-
-
-    const fetchCategory= async()=>{
-
-        const data = await fetch("https://fakestoreapi.com/products/categories").then(data=>data.json());
-        setCategory(data);
-    }
-
-    useEffect(()=>{
-        fetchCategory();
-    },[]);
-
-
-
-    if(!category) return <p>Loading Category...</p>
-
-const handleClick =(e)=>{
-    console.log(e.target.textContent)
-
-}
+  const handleClick = (e) => {
+    router.push(`/category/${e.target.textContent.toLowerCase()}`);
+  };
   return (
-    <div id='navbar'>
-        <div id='logo'>
-            logo
+    <div id="navbar">
+      <Link href="/">
+        <div id="logo">
+          <RiShoppingBag3Fill />
         </div>
-        <div id='catogry-links'>
-            <ul onClick={handleClick}>
-                {category.map((c,i)=> <li key={i}>{c}</li>)}
-                
-            </ul>
+      </Link>
+      <div id="catogry-links">
+        <ul onClick={handleClick}>
+          {category.map((c, i) => (
+            <li key={i}>{c.toUpperCase()}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <Link href="/cart">
+          <p>
+            <BsCart4 />{TotalItemsInCart.length}
+          </p>
+        </Link>
+        <div className="user_info">
+          <p>username</p>
         </div>
-        <div>user</div>
-
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

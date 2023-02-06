@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router';
+import {AiFillStar} from "react-icons/ai"
 
 const card = ({props}) => {
     const router = useRouter();
@@ -24,7 +25,7 @@ const card = ({props}) => {
             </div>
             <p>${price}</p>
             <div className='rating'>
-                <p><span className='star'> {rating.rate}</span></p>
+                <p><span className='star'><AiFillStar/> {rating.rate}</span></p>
                 <p className='count'>Count: {rating.count}</p>
             </div>
         </div>

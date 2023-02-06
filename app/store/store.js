@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 import productReducer from "../reducers/productSlice";
 import categoryReducer from "../reducers/categorySlice";
-
+import cartReducer from "../reducers/cartSlice";
 
 
 
@@ -10,6 +10,7 @@ import categoryReducer from "../reducers/categorySlice";
     reducer:{
         AllProducts:productReducer,
         Category:categoryReducer,
+        Cart:cartReducer,
 
     }
 })
