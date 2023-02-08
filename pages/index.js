@@ -27,7 +27,7 @@ export default function Home() {
 
   useEffect(()=>{
     fetchAllProduct();
-    // fetchCategory();
+    fetchCategory();
 
 
   },[])
@@ -36,10 +36,6 @@ export default function Home() {
   }
   return (
     <>
-    
-
-      
-
       <div className="all_Product_display">
 
       {

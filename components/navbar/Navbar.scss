@@ -12,23 +12,68 @@
 #catogry-links ul{
     display: flex;
     justify-content: space-between;
-
 }
 
 li{
     margin-left: 1rem;
     cursor: pointer;
-    
 }
 
 ul{
     list-style: none;
     color: white;
-
-    
 }
 
 #logo{
     color: white;
     font-size: 2rem;
+}
+
+.user_area{
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+
+    .cart_icon{
+        font-size:2rem;
+     position: relative;
+     color: white;
+    }
+    #items_count{
+        background-color: red;
+        font-size: 0.8rem;
+        padding: 5px;
+        position: absolute;
+        top:-10px;
+        right: -5px;
+        color: white;
+        border-radius: 50%;
+
+
+    }
+
+    .user_info{
+        display: flex;
+        gap:15px
+    }
+    button{
+        border: none;
+        background-color: white;
+        padding: 0 1rem;
+        color: purple;
+        cursor: pointer;
+        font-family: sans-serif;
+        font-weight: 600;
+    }
+    .loginBtn{
+        padding: 1rem;
+    }
+}
+
+
+a{
+    text-decoration: none;
 }

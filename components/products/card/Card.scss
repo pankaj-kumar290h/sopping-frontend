@@ -5,8 +5,9 @@
     background-color: white;
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.5s;
     
-    &:hover img{
+    &:hover{
         transform: scale(1.1);
     }
     &_body{

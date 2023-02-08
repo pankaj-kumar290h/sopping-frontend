@@ -2,7 +2,9 @@ import React from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { AiFillStar, AiFillThunderbolt,AiTwotoneDelete } from "react-icons/ai";
 import { BsCheckLg } from "react-icons/bs";
+import {FcFile} from "react-icons/fc"
 import { removeFromCart } from "@/app/actions/cart";
+import { toast } from "react-toastify";
 
 const cart = () => {
   const cartProduct = useSelector((e) => e.Cart);
@@ -10,15 +12,34 @@ const cart = () => {
 
   if(cartProduct.length==0) {
     return<>
+    <div className="empty_cart">
+    <div>
+      <FcFile className="file_icon"/>
     <h1>Cart is Empty</h1>
+    </div>
+    </div>
     </>
   }
 
   const TotalPrice = cartProduct?.reduce((acc,cur)=>acc+cur.price,0);
   
+
+  const msg =()=>{
+    toast.success('Removed From Cart', {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
   const remove=(id)=>{
 
     dispatch(removeFromCart(id));
+    msg();
 
   }
   const allProduct = cartProduct.map((product) => {

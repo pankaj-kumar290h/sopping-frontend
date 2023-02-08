@@ -4,12 +4,16 @@ import "../styles/product_page.scss"
 import "../components/navbar/Navbar.scss"
 import "../styles/cart.scss"
 import "../components/util/Loader.scss"
+
+import 'react-toastify/dist/ReactToastify.css';
 import { wrapper,store } from '@/app/store/store';
 import { Provider } from 'react-redux';
 import Navbar from '@/components/navbar/Navbar';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Add_Category } from '@/app/actions/category';
+
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -31,6 +35,18 @@ useEffect(()=>{
     
 
   <Component {...pageProps} />
+  <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="colored"
+/>
   </Provider>
   </> 
   
