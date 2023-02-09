@@ -69,10 +69,10 @@ function Signup() {
         router.push("/");
       }) 
       .catch((error) => {
-        console.log(error.response.data.error);
+        
         setdata({
           ...data,
-          error: { status: true, msg: error.response.data.error },
+          error: { status: true, msg: error?.response?.data.error[0]?.msg },
         });
         setloading(false);
       });
