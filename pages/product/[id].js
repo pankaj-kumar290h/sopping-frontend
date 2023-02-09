@@ -20,10 +20,10 @@ function product() {
 
   const AllProduct = useSelector((e) => e.AllProducts);
   const cartProduct = useSelector((e) => e.Cart);
-  const random = useMemo(() => Math.floor(Math.random() * 13), [id]);
-
+  
   const [product, setProduct] = useState(null);
-
+  const random = useMemo(() => Math.floor(Math.random() * 10), [id]);
+  
   const fetchSingleProduct = async (id) => {
     if (!id) return;
 
@@ -41,8 +41,9 @@ function product() {
   if (!product) {
     return <Loader />;
   }
-
-  const randomProduct = AllProduct.slice(random, random + 5);
+  
+  
+  const randomProduct = AllProduct.slice(random, random + 8);
 
   const msg = (message) => {
     toast.success(message, {
